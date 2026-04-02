@@ -1,19 +1,19 @@
 # DevOps-Engineer-Practical-Task---QSL
 Some task for devops engineer interview 
 
-1. Build a Simple API
+## 1. Build a Simple API
 
 Simple API
 
-## Endpoints
+
 - GET /status → returns OK
 - POST /data → sends back your data
 
-## Run
+
 npm install express
 node server.js
 
-## How it handles ~100 req/sec
+How it handles ~100 req/sec
 
 - Node.js handles many requests at the same time
 - Can run multiple instances
@@ -22,23 +22,19 @@ node server.js
 So it can easily handle 100 requests per second.
 
 
-2. Containerize the Application
+## 2. Containerize the Application
 Docker Setup
 
-## Build image
+
 docker build -t simple-api .
 
-## Run container
+
 docker run -d -p 3000:3000 -e PORT=3000 simple-api
 
-## Environment Variable
+
 - PORT → application port
 
-
-
-
-
-3.Reverse Proxy Setup
+## 3.Reverse Proxy Setup
 
 Nginx Configuration:
 
@@ -60,7 +56,7 @@ http {
 }
 
 
-4. CI/CD Pipeline
+## 4. CI/CD Pipeline
 
 Yaml file
 
@@ -99,7 +95,7 @@ jobs:
         docker rm simple-api || true
         docker run -d -p 3000:3000 --name simple-api simple-api
 
-5. Basic Monitoring & Logs
+## 5. Basic Monitoring & Logs
 
    import logging
 from fastapi import Request
@@ -118,7 +114,7 @@ async def log_requests(request: Request, call_next):
     
 
 
-Bonus (Optional)
+## Bonus (Optional)
 
 
 Choose AWS EC2, GCP Compute Engine.
